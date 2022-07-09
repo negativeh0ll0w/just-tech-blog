@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'post_url',
       'title',
       'content',
       'created_at',
@@ -49,10 +48,9 @@ router.get('/post/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
       'title',
+      'content',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
       {
@@ -71,7 +69,7 @@ router.get('/post/:id', (req, res) => {
   })
     .then(dbPostData => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'Post not found' });
         return;
       }
 
@@ -88,6 +86,7 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
+// login if not already logged in
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -95,6 +94,16 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+// sign up if not already logged in
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+  }
+
+  res.render('signup');
 });
 
 module.exports = router;
