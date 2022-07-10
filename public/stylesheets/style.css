@@ -30,10 +30,7 @@ button {
   border: 0;
   padding: 1%;
   color: white;
-  font-weight: bold;
-  transition: background-color .1s;
-  cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 button:hover {
@@ -50,8 +47,9 @@ button:active {
 
 textarea, input {
   padding: .5%;
-  border-radius: 5px;
+  border-radius: 2px;
   border: 1px solid #ccc;
+  background-color: white;
 }
 
 textarea:focus, input:focus {
@@ -102,7 +100,6 @@ main {
   background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
   text-decoration: none;
   color: #225ca3;
   font-size: 100%;
