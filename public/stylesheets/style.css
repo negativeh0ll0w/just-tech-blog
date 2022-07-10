@@ -46,7 +46,7 @@ button:active {
 }
 
 textarea, input {
-  padding: .5%;
+  padding: 1%;
   border-radius: 2px;
   border: 1px solid #ccc;
   background-color: white;
@@ -89,6 +89,7 @@ header {
 
 header h1 {
   font-size: 1em;
+  color: #2fafbf;
 }
 
 main {
@@ -102,34 +103,48 @@ main {
   padding: 0;
   text-decoration: none;
   color: #225ca3;
-  font-size: 100%;
-  font-weight: bold;
-  transition: color .1s;
+  font-size: 12px;
   margin-left: 16px;
 }
 
 .btn-no-style:hover {
   background: none;
-  color: #3486eb;
+  color: #008ca3;
+  font-weight:bold;
+}
+.btn-no-style:active {
+  color: black;
 }
 
 .delete-post-btn {
   background-color: #b40000;
+  color: white;
+  border-radius: 4px;
 }
 
 .delete-post-btn:hover {
   background-color: #ff0000;
+  color: black;
+  font-weight: bold;
+}
+.delete-post-btn:active {
+  background-color: #ff4f00;
+  font-weight:bolder;
 }
 
 .post {
   margin-bottom: 2%;
   line-height: 150%;
+  padding: 5px;
 }
 
+.post .title {
+  background-color: white;
+}
 .post .title span {
   font-style: italic;
   font-size: 90%;
-  color: #7d7d7d;
+  color: #60707d;
 }
 
 .edit-link {
@@ -148,7 +163,7 @@ main {
 }
 
 .comment:nth-child(odd) {
-  background-color: #fff5eb;
+  background-color: #ccffef;
 }
 
 .comment .meta {
